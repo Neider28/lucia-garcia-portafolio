@@ -1,0 +1,207 @@
+---
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+import Icon from '../components/Icon.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const skills = [
+	{
+		name: 'Illustrator',
+		icon: 'illustrator',
+		category: 'Diseño Vectorial',
+		level: 'Intermedio',
+		description: 'Creación de ilustraciones vectoriales, logotipos y gráficos escalables.'
+	},
+	{
+		name: 'Photoshop',
+		icon: 'photoshop',
+		category: 'Edición de Imagen',
+		level: 'Intermedio',
+		description: 'Edición y manipulación de imágenes, retoque fotográfico y composición digital.'
+	},
+	{
+		name: 'Figma',
+		icon: 'figma',
+		category: 'Diseño UI/UX',
+		level: 'Intermedio',
+		description: 'Diseño de interfaces de usuario, prototipado y diseño colaborativo.'
+	},
+];
+---
+
+<BaseLayout
+	title="Habilidades | Lucía García"
+	description="Herramientas y habilidades de diseño de Lucía García"
+>
+	<div class="stack gap-20">
+		<main class="wrapper skills-main">
+			<Hero
+				title="Habilidades"
+				tagline="Herramientas y tecnologías que utilizo para crear diseños impactantes. Cada herramienta es una extensión de mi creatividad y me permite dar vida a mis ideas."
+				align="start"
+			/>
+
+			<section class="skills-section">
+				<div class="skills-grid">
+					{
+						skills.map((skill) => (
+							<article class="skill-card">
+								<div class="skill-header">
+									<div class="skill-icon-wrapper">
+										<Icon icon={skill.icon} size="3.5rem" color="var(--accent-regular)" gradient />
+									</div>
+									<div class="skill-level">{skill.level}</div>
+								</div>
+								<div class="skill-content">
+									<h3 class="skill-name">{skill.name}</h3>
+									<p class="skill-category">{skill.category}</p>
+									<p class="skill-description">{skill.description}</p>
+								</div>
+							</article>
+						))
+					}
+				</div>
+			</section>
+		</main>
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.skills-main {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	.skills-section {
+		width: 100%;
+	}
+
+	.skills-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 2rem;
+	}
+
+	.skill-card {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+		padding: 2rem;
+		border: 1px solid var(--gray-800);
+		border-radius: 1.5rem;
+		background: var(--gray-999_40);
+		box-shadow: var(--shadow-sm);
+		transition: all 0.3s ease;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.skill-card::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 4px;
+		height: 100%;
+		background: var(--accent-regular);
+		transform: scaleY(0);
+		transform-origin: bottom;
+		transition: transform 0.3s ease;
+	}
+
+	.skill-card:hover {
+		transform: translateY(-4px);
+		border-color: var(--accent-regular);
+		box-shadow: var(--shadow-md);
+		background: var(--gray-999_60);
+	}
+
+	.skill-card:hover::before {
+		transform: scaleY(1);
+	}
+
+	.skill-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+	}
+
+	.skill-icon-wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 4rem;
+		height: 4rem;
+		border-radius: 1rem;
+		background: var(--gray-999_60);
+		transition: transform 0.3s ease;
+	}
+
+	.skill-card:hover .skill-icon-wrapper {
+		transform: scale(1.1) rotate(5deg);
+	}
+
+	.skill-level {
+		padding: 0.375rem 0.75rem;
+		border-radius: 0.5rem;
+		background: var(--accent-regular);
+		color: var(--gray-999);
+		font-size: var(--text-xs);
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+	}
+
+	.skill-content {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		flex: 1;
+	}
+
+	.skill-name {
+		font-size: var(--text-xl);
+		font-weight: 700;
+		color: var(--gray-0);
+		margin: 0;
+	}
+
+	.skill-category {
+		font-size: var(--text-sm);
+		font-weight: 600;
+		color: var(--accent-regular);
+		margin: 0;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+	}
+
+	.skill-description {
+		font-size: var(--text-base);
+		color: var(--gray-300);
+		line-height: 1.6;
+		margin: 0.5rem 0 0 0;
+	}
+
+	@media (min-width: 50em) {
+		.skills-grid {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 2.5rem;
+		}
+
+		.skill-card {
+			padding: 2.5rem;
+		}
+
+		.skill-name {
+			font-size: var(--text-2xl);
+		}
+	}
+
+	@media (min-width: 75em) {
+		.skills-grid {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+</style>

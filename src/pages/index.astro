@@ -27,22 +27,22 @@ const projects = (await getCollection('work'))
 		<div class="wrapper stack gap-8 lg:gap-20">
 			<header class="hero">
 				<Hero
-					title="Hello, my name is Jeanine White"
-					tagline="I am a Creative Developer who is currently based in Portland, Oregon."
+					title="Hola, mi nombre es Lucía García"
+					tagline="Creatividad visual aplicada a resultados reales."
 					align="start"
 				>
 					<div class="roles">
-						<Pill><Icon icon="code" size="1.33em" /> Developer</Pill>
-						<Pill><Icon icon="microphone-stage" size="1.33em" /> Speaker</Pill>
-						<Pill><Icon icon="pencil-line" size="1.33em" /> Writer</Pill>
+						<Pill><Icon icon="palette" size="1.33em" /> Diseño gráfico</Pill>
+						<Pill><Icon icon="device-mobile" size="1.33em" /> Diseño UX/UI</Pill>
+						<Pill><Icon icon="package" size="1.33em" /> Branding</Pill>
 					</div>
 				</Hero>
 
 				<img
-					alt="Jeanine White smiling in a red plaid shirt and tortoise shell glasses"
+					alt="Lucía García"
 					width="480"
 					height="620"
-					src="/assets/portrait.jpg"
+					src="/assets/portrait.png"
 				/>
 			</header>
 
@@ -52,8 +52,11 @@ const projects = (await getCollection('work'))
 		<main class="wrapper stack gap-20 lg:gap-48">
 			<section class="section with-background with-cta">
 				<header class="section-header stack gap-2 lg:gap-4">
-					<h3>Selected Work</h3>
-					<p>Take a look below at some of my featured work for clients from the past few years.</p>
+					<h3>Proyectos</h3>
+					<p>
+						Aquí puedes ver algunos de mis proyectos que demuestran mis habilidades y mi pasión por el diseño.
+						Cada proyecto es una oportunidad de aprender, crecer y mostrar mi potencial como diseñadora.
+					</p>
 				</header>
 
 				<div class="gallery">
@@ -70,7 +73,7 @@ const projects = (await getCollection('work'))
 
 				<div class="cta">
 					<CallToAction href="/work/">
-						View All
+						Ver todos
 						<Icon icon="arrow-right" size="1.2em" />
 					</CallToAction>
 				</div>
@@ -78,19 +81,24 @@ const projects = (await getCollection('work'))
 
 			<section class="section with-background bg-variant">
 				<header class="section-header stack gap-2 lg:gap-4">
-					<h3>Mentions</h3>
+					<h3>Habilidades</h3>
 					<p>
-						I have been fortunate enough to receive praise for my work in several publications. Take
-						a look below to learn more.
+						Herramientas y software que utilizo para crear diseños impactantes y funcionales. Cada
+						proyecto requiere la combinación adecuada de estas herramientas para lograr los mejores resultados.
 					</p>
 				</header>
 
 				<div class="gallery">
 					<Grid variant="small">
 						{
-							['Medium', 'BuzzFeed', 'The Next Web', 'awwwards.', 'TechCrunch'].map((brand) => (
-								<li class="mention-card">
-									<p>{brand}</p>
+							[
+								{ name: 'Illustrator', icon: 'illustrator' },
+								{ name: 'Photoshop', icon: 'photoshop' },
+								{ name: 'Figma', icon: 'figma' },
+							].map((tool) => (
+								<li class="skill-card">
+									<Icon icon={tool.icon} size="2.5rem" color="var(--accent-regular)" gradient />
+									<p>{tool.name}</p>
 								</li>
 							))
 						}
@@ -240,10 +248,53 @@ const projects = (await getCollection('work'))
 		box-shadow: var(--shadow-sm);
 	}
 
+	.skill-card {
+		display: flex;
+		flex-direction: column;
+		height: 7rem;
+		justify-content: center;
+		align-items: center;
+		gap: 0.75rem;
+		text-align: center;
+		border: 1px solid var(--gray-800);
+		border-radius: 1.5rem;
+		color: var(--gray-300);
+		background: var(--gradient-subtle);
+		box-shadow: var(--shadow-sm);
+		transition: all 0.3s ease;
+		cursor: pointer;
+	}
+
+	.skill-card:hover {
+		transform: translateY(-4px);
+		border-color: var(--accent-regular);
+		box-shadow: var(--shadow-md);
+		background: var(--gray-999_60);
+	}
+
+	.skill-card:hover p {
+		color: var(--accent-regular);
+	}
+
+	.skill-card p {
+		font-size: var(--text-sm);
+		font-weight: 500;
+		transition: color 0.3s ease;
+	}
+
 	@media (min-width: 50em) {
 		.mention-card {
 			border-radius: 1.5rem;
 			height: 9.5rem;
+		}
+
+		.skill-card {
+			height: 9.5rem;
+			gap: 1rem;
+		}
+
+		.skill-card p {
+			font-size: var(--text-base);
 		}
 	}
 </style>

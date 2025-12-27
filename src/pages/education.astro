@@ -1,0 +1,214 @@
+---
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+import Icon from '../components/Icon.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const educationItems = [
+	{
+		title: 'Diseño Gráfico',
+		institution: 'Platzi / Coursera',
+		year: '2023 - 2024',
+		type: 'Curso',
+		icon: 'palette',
+		description: 'Formación en fundamentos del diseño gráfico, teoría del color, tipografía y composición visual.'
+	},
+	{
+		title: 'Diseño UX/UI',
+		institution: 'Google UX Design Certificate',
+		year: '2024',
+		type: 'Certificación',
+		icon: 'device-mobile',
+		description: 'Certificación profesional en diseño de experiencia de usuario e interfaces digitales.'
+	},
+	{
+		title: 'Branding y Identidad Visual',
+		institution: 'Domestika',
+		year: '2023',
+		type: 'Curso',
+		icon: 'package',
+		description: 'Aprendizaje en creación de identidades de marca, logotipos y sistemas de diseño.'
+	}
+];
+---
+
+<BaseLayout
+	title="Educación | Lucía García"
+	description="Formación académica y cursos de Lucía García en diseño gráfico y UX/UI"
+>
+	<div class="stack gap-20">
+		<main class="wrapper education-main">
+			<Hero
+				title="Educación"
+				tagline="Mi formación continua en diseño. Cada curso y certificación es un paso más en mi desarrollo profesional como diseñadora."
+				align="start"
+			/>
+
+			<section class="education-section">
+				<div class="education-grid">
+					{
+						educationItems.map((item) => (
+							<article class="education-card">
+								<div class="education-header">
+									<div class="education-icon">
+										<Icon icon={item.icon} size="3rem" color="var(--accent-regular)" gradient />
+									</div>
+									<div class="education-badge">{item.type}</div>
+								</div>
+								<div class="education-content">
+									<h3 class="education-title">{item.title}</h3>
+									<p class="education-institution">{item.institution}</p>
+									<p class="education-year">{item.year}</p>
+									<p class="education-description">{item.description}</p>
+								</div>
+							</article>
+						))
+					}
+				</div>
+			</section>
+		</main>
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.education-main {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	.education-section {
+		width: 100%;
+	}
+
+	.education-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 2rem;
+	}
+
+	.education-card {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+		padding: 2rem;
+		border: 1px solid var(--gray-800);
+		border-radius: 1.5rem;
+		background: var(--gray-999_40);
+		box-shadow: var(--shadow-sm);
+		transition: all 0.3s ease;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.education-card::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 4px;
+		height: 100%;
+		background: var(--accent-regular);
+		transform: scaleY(0);
+		transform-origin: bottom;
+		transition: transform 0.3s ease;
+	}
+
+	.education-card:hover {
+		transform: translateY(-4px);
+		border-color: var(--accent-regular);
+		box-shadow: var(--shadow-md);
+		background: var(--gray-999_60);
+	}
+
+	.education-card:hover::before {
+		transform: scaleY(1);
+	}
+
+	.education-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+	}
+
+	.education-icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 4rem;
+		height: 4rem;
+		border-radius: 1rem;
+		background: var(--gray-999_60);
+		transition: transform 0.3s ease;
+	}
+
+	.education-card:hover .education-icon {
+		transform: scale(1.1) rotate(5deg);
+	}
+
+	.education-badge {
+		padding: 0.375rem 0.75rem;
+		border-radius: 0.5rem;
+		background: var(--accent-regular);
+		color: var(--gray-999);
+		font-size: var(--text-xs);
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+	}
+
+	.education-content {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	.education-title {
+		font-size: var(--text-xl);
+		font-weight: 700;
+		color: var(--gray-0);
+		margin: 0;
+	}
+
+	.education-institution {
+		font-size: var(--text-base);
+		font-weight: 600;
+		color: var(--accent-regular);
+		margin: 0;
+	}
+
+	.education-year {
+		font-size: var(--text-sm);
+		color: var(--gray-400);
+		margin: 0;
+	}
+
+	.education-description {
+		font-size: var(--text-base);
+		color: var(--gray-300);
+		line-height: 1.6;
+		margin: 0.5rem 0 0 0;
+	}
+
+	@media (min-width: 50em) {
+		.education-grid {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 2.5rem;
+		}
+
+		.education-card {
+			padding: 2.5rem;
+		}
+
+		.education-title {
+			font-size: var(--text-2xl);
+		}
+	}
+
+	@media (min-width: 75em) {
+		.education-grid {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+</style>
