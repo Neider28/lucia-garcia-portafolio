@@ -3,7 +3,6 @@ title: Berry
 publishDate: 2025-12-15 00:00:00
 img: /assets/berry.png
 img_alt: Berry
-url: https://www.figma.com/design/hTOGAhSXtdjLELQdtDSQJ8/BELLE?m=auto&t=yBdh5HyTbTnxgvBb-6
 description: |
   Caja elegante para fresas glaseadas.
 tags:
