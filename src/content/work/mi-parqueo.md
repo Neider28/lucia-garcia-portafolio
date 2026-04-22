@@ -1,9 +1,9 @@
 ---
-title: Mi Parqueo
+title: MiParqueo
 publishDate: 2026-02-15 00:00:00
 img: /assets/mi-parqueo.png
 img_alt: Mi Parqueo
-url: https://www.figma.com/design/hTOGAhSXtdjLELQdtDSQJ8/BELLE?m=auto&t=yBdh5HyTbTnxgvBb-6
+url: https://www.figma.com/design/333y3AuWktwe49SH965ozp/Mi-Parqueo?node-id=2425-136&p=f
 description: |
   Una solución pensada para optimizar el uso del espacio urbano.
 tags:
