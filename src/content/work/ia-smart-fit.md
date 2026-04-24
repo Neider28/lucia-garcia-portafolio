@@ -4,7 +4,7 @@ publishDate: 2026-04-24 00:00:00
 video: /assets/ia-smart-fit.mp4
 video_alt: Smart Fit
 description: |
-  Video promocional generado con IA para Smart Fit.
+  Video promocional generado con IA para una marca de gimnasios.
 tags:
   - Video con IA
   - Marketing
