@@ -12,6 +12,6 @@ tags:
   - Branding
 ---
 
-STREET VOID es una marca de ropa urbana que fusiona estilo contemporáneo con una actitud rebelde y auténtica. Inspirada en la cultura streetwear y la estética de la ciudad, la marca propone prendas oversize, diseños impactantes y una identidad visual marcada por lo moderno y lo disruptivo. 
+Street Void es una marca de ropa urbana que fusiona estilo contemporáneo con una actitud rebelde y auténtica. Inspirada en la cultura streetwear y la estética de la ciudad, la marca propone prendas oversize, diseños impactantes y una identidad visual marcada por lo moderno y lo disruptivo. 
 
-STREET VOID no sigue tendencias, las redefine, conectando con una generación que busca expresarse con libertad, seguridad y personalidad propia.
+Street Void no sigue tendencias, las redefine, conectando con una generación que busca expresarse con libertad, seguridad y personalidad propia.
