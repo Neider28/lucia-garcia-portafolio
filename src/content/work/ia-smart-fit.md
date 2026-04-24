@@ -12,4 +12,6 @@ tags:
   - Branding
 ---
 
-Smart Fit es una marca de gimnasios enfocada en ofrecer entrenamiento accesible, moderno y de alta calidad. Su propuesta se basa en brindar espacios bien equipados, tecnología aplicada al fitness y una experiencia cómoda para todo tipo de usuarios. La marca comunica disciplina, constancia y superación personal, posicionándose como una opción práctica para quienes buscan mejorar su estilo de vida sin complicaciones.
+Smart Fit es una marca de gimnasios enfocada en ofrecer entrenamiento accesible, moderno y de alta calidad. Su propuesta se basa en brindar espacios bien equipados, tecnología aplicada al fitness y una experiencia cómoda para todo tipo de usuarios.
+
+La marca comunica disciplina, constancia y superación personal, posicionándose como una opción práctica para quienes buscan mejorar su estilo de vida sin complicaciones.
